@@ -55,14 +55,14 @@ export default function Header({ onOpenBooking, activeSection }: HeaderProps) {
           </a>
 
           {/* Navigation */}
-          <nav className="hidden lg:flex items-center gap-1 bg-white/40 p-1.5 rounded-full border border-brand-primary/5">
+          <nav className="hidden md:flex items-center gap-0.5 lg:gap-1 bg-white/40 p-1 lg:p-1.5 rounded-full border border-brand-primary/5">
             {navItems.map((item) => {
               const isActive = activeSection === item.id;
               return (
                 <a
                   key={item.label}
                   href={item.href}
-                  className={`relative px-5 py-2 text-xs font-medium tracking-wide rounded-full transition-colors ${
+                  className={`relative px-2.5 lg:px-5 py-1.5 lg:py-2 text-[10px] lg:text-xs font-medium tracking-wide rounded-full transition-colors ${
                     isActive ? "text-white" : "text-brand-primary/70 hover:text-brand-primary"
                   }`}
                 >
@@ -83,7 +83,7 @@ export default function Header({ onOpenBooking, activeSection }: HeaderProps) {
           <div className="flex items-center gap-2 sm:gap-4 md:gap-6">
             <a
               href="tel:+12026884000"
-              className="hidden sm:flex items-center gap-2 text-xs font-semibold text-brand-primary/80 hover:text-brand-accent transition-colors"
+              className="hidden lg:flex items-center gap-2 text-xs font-semibold text-brand-primary/80 hover:text-brand-accent transition-colors"
             >
               <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-brand-primary/10 flex items-center justify-center bg-white/20">
                 <Phone className="w-3 sm:w-3.5 h-3 sm:h-3.5" />
@@ -108,7 +108,7 @@ export default function Header({ onOpenBooking, activeSection }: HeaderProps) {
             {/* Mobile Hamburger Toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden w-8 h-8 rounded-full border border-brand-primary/10 flex items-center justify-center bg-white/40 text-brand-primary hover:bg-white transition-colors cursor-pointer"
+              className="md:hidden w-8 h-8 rounded-full border border-brand-primary/10 flex items-center justify-center bg-white/40 text-brand-primary hover:bg-white transition-colors cursor-pointer"
               aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
@@ -125,7 +125,7 @@ export default function Header({ onOpenBooking, activeSection }: HeaderProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed inset-0 top-[57px] sm:top-[65px] bg-[#FAF9F6]/98 backdrop-blur-xl z-40 lg:hidden flex flex-col justify-between overflow-y-auto"
+            className="fixed inset-0 top-[57px] sm:top-[65px] bg-[#FAF9F6]/98 backdrop-blur-xl z-40 md:hidden flex flex-col justify-between overflow-y-auto"
           >
             <div className="px-6 py-8 space-y-6">
               <span className="text-[10px] font-mono tracking-[0.25em] text-brand-accent uppercase font-bold block">

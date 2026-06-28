@@ -1,10 +1,18 @@
 import { Doctor, Service, Review, Technology } from "./types";
+// @ts-ignore
+import heroLobby from "./assets/images/clinic_lobby_1782454496014.jpg";
+// @ts-ignore
+import drCeb from "./assets/images/lead_dentist_1782454568794.jpg";
+// @ts-ignore
+import drRostova from "./assets/images/chief_dentist_1782454511401.jpg";
+// @ts-ignore
+import drKincaid from "./assets/images/orthodontist_dentist_1782454584705.jpg";
 
 export const IMAGES = {
-  heroLobby: "/src/assets/images/clinic_lobby_1782454496014.jpg",
-  drCeb: "/src/assets/images/lead_dentist_1782454568794.jpg",
-  drRostova: "/src/assets/images/chief_dentist_1782454511401.jpg",
-  drKincaid: "/src/assets/images/orthodontist_dentist_1782454584705.jpg",
+  heroLobby,
+  drCeb,
+  drRostova,
+  drKincaid,
 };
 
 export const SERVICES: Service[] = [
