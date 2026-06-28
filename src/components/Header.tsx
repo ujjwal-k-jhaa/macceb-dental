@@ -38,7 +38,7 @@ export default function Header({ onOpenBooking, activeSection }: HeaderProps) {
             : "bg-transparent py-5 md:py-6"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between gap-2 md:gap-4">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-1.5 sm:gap-2 group shrink-0">
             <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl accent-gradient flex items-center justify-center shadow-md shadow-brand-accent/20 transition-transform group-hover:scale-105">
@@ -55,14 +55,14 @@ export default function Header({ onOpenBooking, activeSection }: HeaderProps) {
           </a>
 
           {/* Navigation */}
-          <nav className="hidden md:flex items-center gap-0.5 lg:gap-1 bg-white/40 p-1 lg:p-1.5 rounded-full border border-brand-primary/5">
+          <nav className="hidden md:flex items-center gap-0.5 lg:gap-1 bg-white/40 p-1 rounded-full border border-brand-primary/5">
             {navItems.map((item) => {
               const isActive = activeSection === item.id;
               return (
                 <a
                   key={item.label}
                   href={item.href}
-                  className={`relative px-2.5 lg:px-5 py-1.5 lg:py-2 text-[10px] lg:text-xs font-medium tracking-wide rounded-full transition-colors ${
+                  className={`relative px-2 md:px-2.5 lg:px-4 xl:px-5 py-1.5 lg:py-2 text-[10px] lg:text-xs font-medium tracking-wide rounded-full transition-colors ${
                     isActive ? "text-white" : "text-brand-primary/70 hover:text-brand-primary"
                   }`}
                 >
@@ -80,26 +80,27 @@ export default function Header({ onOpenBooking, activeSection }: HeaderProps) {
           </nav>
 
           {/* Action Button & Contact Info */}
-          <div className="flex items-center gap-2 sm:gap-4 md:gap-6">
+          <div className="flex items-center gap-1.5 sm:gap-3 md:gap-4 lg:gap-6">
             <a
               href="tel:+12026884000"
               className="hidden lg:flex items-center gap-2 text-xs font-semibold text-brand-primary/80 hover:text-brand-accent transition-colors"
             >
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-brand-primary/10 flex items-center justify-center bg-white/20">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-brand-primary/10 flex items-center justify-center bg-white/20 shrink-0">
                 <Phone className="w-3 sm:w-3.5 h-3 sm:h-3.5" />
               </div>
-              <span className="font-mono tracking-tight text-[11px] sm:text-xs">+1 (202) 688-4000</span>
+              <span className="hidden xl:inline font-mono tracking-tight text-[11px] sm:text-xs">+1 (202) 688-4000</span>
             </a>
 
             <motion.button
               whileTap={{ scale: 0.97 }}
               onClick={onOpenBooking}
-              className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-brand-primary text-white text-[11px] sm:text-xs font-semibold tracking-wide shadow-lg shadow-brand-primary/15 hover:bg-brand-primary/90 hover:shadow-brand-accent/20 transition-all cursor-pointer border border-brand-accent/10 shrink-0"
+              className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 lg:px-5 py-2 sm:py-2.5 rounded-full bg-brand-primary text-white text-[10px] sm:text-xs font-semibold tracking-wide shadow-lg shadow-brand-primary/15 hover:bg-brand-primary/90 hover:shadow-brand-accent/20 transition-all cursor-pointer border border-brand-accent/10 shrink-0"
             >
               <Calendar className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-brand-accent" />
               <span>
                 <span className="hidden xs:inline">Book </span>
-                <span className="hidden sm:inline">Appointment</span>
+                <span className="hidden md:inline lg:hidden">Now</span>
+                <span className="hidden lg:inline">Appointment</span>
                 <span className="inline xs:hidden">Book</span>
               </span>
               <ArrowRight className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-white/50" />
